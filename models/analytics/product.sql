@@ -4,5 +4,5 @@ SELECT
   , product.supplier_id
   , supplier.supplier_name
 FROM `vit-lam-data.wide_world_importers.warehouse__stock_items` AS product
-JOIN `learn-dbt-421408.learn_dbt.supplier` AS supplier
+JOIN {{ ref('supplier') }} AS supplier
   ON product.supplier_id = supplier.supplier_id
